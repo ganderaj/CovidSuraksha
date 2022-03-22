@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Connect Doctor</title>
+
+    </head>
+
+    <body>
+        <script>
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+          
+            script.addEventListener("load", function (event) {
+              const meeting = new VideoSDKMeeting();
+            
+              const config = {
+                name: "Rohith Gajawada",
+                apiKey: "95d6ca2c-b228-43e1-8dae-2bbfe306c3d1", 
+                meetingId: "Covid Suraksha", 
+          
+                redirectOnLeave: "http://127.0.0.1:5500/Page-1.html",
+    
+          
+                micEnabled: true,
+                webcamEnabled: true,
+                participantCanToggleSelfWebcam: true,
+                participantCanToggleSelfMic: true,
+          
+                joinScreen: {
+                  visible: true, // Show the join screen ?
+                  title: "Covid Suraksha", // Meeting title
+                  meetingUrl: window.location.href, // Meeting joining url
+                },
+              };
+          
+              meeting.init(config);
+            });
+            
+          
+            script.src = "https://sdk.videosdk.live/rtc-js-prebuilt/0.1.29/rtc-js-prebuilt.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+          
+          </script>
+                
+    </body>
+
+</html>
